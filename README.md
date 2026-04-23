@@ -78,10 +78,3 @@ For interactive diagnostics and exploratory data analysis (EDA), refer to the pr
 jupyter notebook notebooks/stock_prediction_project.ipynb
 ```
 
-## Visual Outputs
-
-![Sector Performance Analysis](assets/sector_analysis.png)
-*Figure 1: Component price profiling across Nifty 50 IT constituents.*
-
-![Short-term Trend Projection](assets/forecast_projection.png)
-*Figure 2: Observed vs. Projected Horizon (10-Day Recursive Forecast).*
