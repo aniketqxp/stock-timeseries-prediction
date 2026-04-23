@@ -10,16 +10,29 @@ A multivariate time-series analytical framework designed to forecast trend conti
 
 ```mermaid
 graph TD
-    A[Data Ingestion] -->|yfinance| B[Pre-processing Engine]
+    A[/Data Ingestion/] -->|yfinance| B(Pre-processing Engine)
     B --> C{Feature Engineering}
     C -->|APS| D[Volume-Weighted Metric]
     C -->|Global| E[Macroeconomic Indicators]
     C -->|Technical| F[SMA / RSI / Lags]
-    D & E & F --> G[Hybrid Modeling Suite]
+    D & E & F --> G([Hybrid Modeling Suite])
     G --> H[SARIMA Baseline]
     G --> I[Multivariate GRU]
-    H & I --> J[Benchmarking & Evaluation]
-    J --> K[10-Day Horizon Projection]
+    H & I --> J(Benchmarking & Evaluation)
+    J --> K[/10-Day Horizon Projection/]
+
+    %% Styling
+    style A fill:#2d3436,stroke:#000,color:#fff
+    style B fill:#0984e3,stroke:#000,color:#fff
+    style C fill:#fdcb6e,stroke:#000,color:#000
+    style D fill:#00b894,stroke:#000,color:#fff
+    style E fill:#00b894,stroke:#000,color:#fff
+    style F fill:#00b894,stroke:#000,color:#fff
+    style G fill:#6c5ce7,stroke:#000,color:#fff
+    style H fill:#e17055,stroke:#000,color:#fff
+    style I fill:#e17055,stroke:#000,color:#fff
+    style J fill:#0984e3,stroke:#000,color:#fff
+    style K fill:#2d3436,stroke:#000,color:#fff
 ```
 
 ## Core Methodology
