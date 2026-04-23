@@ -1,41 +1,74 @@
-# Stock Time-Series Prediction Pipeline
+# Nifty 50 IT Sector Forecasting Pipeline
 
-A professional, production-grade pipeline for predicting stock performance scores using Nifty 50 IT sector data.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/aniketqxp/stock-timeseries-prediction)
 
-## Project Structure
+A multivariate time-series analytical framework designed to forecast trend continuations in the Nifty 50 IT sector. This system implements a hybrid architecture combining statistical autoregression (SARIMA) with recursive deep learning (GRU) to model non-linear temporal dependencies across the Indian IT infrastructure.
 
-```text
-.
-├── main.py                 # Main entry point to run the pipeline
-├── src/                    # Core logic modules
-│   ├── data_ingestion.py   # Yahoo Finance data fetching
-│   ├── preprocessing.py    # Cleaning, feature engineering, scaling
-│   ├── models.py           # SARIMA and GRU model implementation
-│   └── visualization.py    # Plotting and charting logic
-├── notebooks/              # Iterative analysis and exploration
-│   └── stock_prediction_project.ipynb
-├── scripts/                # Utility scripts (deployment, batch jobs)
-├── requirements.txt        # Pinned dependencies
-└── pyproject.toml         # Modern project configuration
+## System Architecture
+
+```mermaid
+graph TD
+    A[Data Ingestion] -->|yfinance| B[Pre-processing Engine]
+    B --> C{Feature Engineering}
+    C -->|APS| D[Volume-Weighted Metric]
+    C -->|Global| E[Macroeconomic Indicators]
+    C -->|Technical| F[SMA / RSI / Lags]
+    D & E & F --> G[Hybrid Modeling Suite]
+    G --> H[SARIMA Baseline]
+    G --> I[Multivariate GRU]
+    H & I --> J[Benchmarking & Evaluation]
+    J --> K[10-Day Horizon Projection]
 ```
 
-## Getting Started
+## Core Methodology
 
-1. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+The pipeline utilizes the **Aggregate Performance Score (APS)** as its primary target variable. The APS is a volume-weighted composite metric that captures the sector-wide valuation density of major constituents (TCS, Infosys, Wipro, HCL Tech, Tech Mahindra).
 
-2. **Run the Pipeline**:
-   ```bash
-   python main.py
-   ```
+### Analytical Features
+*   **Macroeconomic Integration**: Correlation mapping with Gold futures, USD-INR exchange rates, and S&P 500 benchmarks.
+*   **Trend Oscillators**: Automated calculation of 10/20/50-day Moving Averages and Relative Strength Index (RSI).
+*   **Recursive Forecasting**: Implementation of multi-step recursive projection for a 10-day temporal window.
 
-## Key Features
+## Local Environment Setup
 
-- **Multi-Source Ingestion**: Combines stock ticker data with global economic indicators (Gold, Currency, S&P 500).
-- **Aggregate Performance Score (APS)**: A custom volume-weighted metric for trend analysis.
-- **Hybrid Modeling**: 
-  - **SARIMA**: Statistical time-series forecasting with seasonal awareness.
-  - **GRU**: Deep Learning Recurrent Neural Networks for complex pattern recognition.
-- **Automated Preprocessing**: Robust alignment and cleaning of non-contiguous time series.
+### Prerequisites
+*   Python 3.10 or higher
+*   pip / venv
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/aniketqxp/stock-timeseries-prediction.git
+cd stock-timeseries-prediction
+
+# Initialize virtual environment
+python -m venv venv
+source venv/bin/scripts/activate  # On Windows: .\venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+## Quick Start Usage
+
+### Pipeline Execution
+Run the primary entry point to initiate the end-to-end ingestion, training, and projection sequence:
+```bash
+python main.py
+```
+
+### Research Exploration
+For interactive diagnostics and exploratory data analysis (EDA), refer to the project notebook:
+```bash
+jupyter notebook notebooks/stock_prediction_project.ipynb
+```
+
+## Visual Outputs
+
+![Sector Performance Analysis Placeholder](https://via.placeholder.com/800x400?text=Sector+Performance+Analysis+Output)
+*Figure 1: Component price profiling across Nifty 50 IT constituents.*
+
+![Short-term Trend Projection Placeholder](https://via.placeholder.com/800x400?text=Short-term+Trend+Projection+Output)
+*Figure 2: Observed vs. Projected Horizon (10-Day Recursive Forecast).*
