@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def plot_forecast(historical_dates, historical_values, forecast_dates, forecast_values, title="Stock Prediction Forecast"):
+def plot_forecast(historical_dates, historical_values, forecast_dates, forecast_values, title="Stock Prediction Forecast", save_path=None):
     """
     Plots historical vs forecasted values.
     """
@@ -14,7 +14,11 @@ def plot_forecast(historical_dates, historical_values, forecast_dates, forecast_
     plt.legend()
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.show()
+    if save_path:
+        plt.savefig(save_path)
+        print(f"Plot saved to {save_path}")
+    else:
+        plt.show()
 
 def plot_training_history(history):
     """
@@ -28,3 +32,20 @@ def plot_training_history(history):
     plt.ylabel('Loss')
     plt.legend()
     plt.show()
+
+def plot_sector_analysis(adj_prices, tickers, title="Sector Price Analysis", save_path=None):
+    """
+    Plots individual ticker prices for sector analysis.
+    """
+    plt.figure(figsize=(15, 6))
+    for ticker in tickers:
+        if ticker in adj_prices.columns:
+            plt.plot(adj_prices.index, adj_prices[ticker], label=ticker, alpha=0.8)
+    plt.title(title)
+    plt.legend()
+    plt.tight_layout()
+    if save_path:
+        plt.savefig(save_path)
+        print(f"Plot saved to {save_path}")
+    else:
+        plt.show()
