@@ -73,7 +73,7 @@ python main.py
 ```
 
 ### Research Exploration
-For interactive diagnostics and exploratory data analysis (EDA), refer to the project notebook:
+For exploratory data analysis (EDA) and research diagnostics, refer to the project notebook:
 ```bash
 jupyter notebook notebooks/stock_prediction_project.ipynb
 ```
