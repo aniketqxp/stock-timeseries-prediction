@@ -1,6 +1,6 @@
 # Nifty 50 IT Sector Forecasting Pipeline
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/aniketqxp/stock-timeseries-prediction)
 
@@ -80,8 +80,8 @@ jupyter notebook notebooks/stock_prediction_project.ipynb
 
 ## Visual Outputs
 
-![Sector Performance Analysis Placeholder](https://via.placeholder.com/800x400?text=Sector+Performance+Analysis+Output)
+![Sector Performance Analysis](assets/sector_analysis.png)
 *Figure 1: Component price profiling across Nifty 50 IT constituents.*
 
-![Short-term Trend Projection Placeholder](https://via.placeholder.com/800x400?text=Short-term+Trend+Projection+Output)
+![Short-term Trend Projection](assets/forecast_projection.png)
 *Figure 2: Observed vs. Projected Horizon (10-Day Recursive Forecast).*
