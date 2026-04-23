@@ -57,3 +57,4 @@ ENV/
 
 # Jupyter
 .ipynb_checkpoints
+TECHNICAL_DETAILS.md
